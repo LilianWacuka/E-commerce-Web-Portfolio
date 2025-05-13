@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<header id="site-header" class="py-4 text-center bg-light">
+  <h1 class="mb-0">Your Cart</h1>
+</header>
+<section id="cart" class="cart-hero d-flex align-items-center justify-content-center text-center text-white bg-dark hero-height">
+  <div class="container">
+    <h2 class="display-5 fw-bold">Your Shopping Cart</h2>
+    <a href="index.html" class="btn btn-warning btn-lg mt-3">Back Home</a>
+  </div>
+</section>
+<div class="container py-5">
+  <div class="row g-4" id="product-list">
+    <div class="col-md-4">
+      <div class="card product-card h-100">
+        <img src="Assets/Image/KKienyeji.png" class="card-img-top product-img" alt="Improved-Kienyeji" />
+        <div class="card-body">
+          <h5 class="card-title">Improved-Kienyeji</h5>
+          <select class="form-select age-select mt-2" title="Select Age">
+            <option disabled selected>Select Age</option>
+            <option value="young" data-price="1200">2-3 Months (KES 1,200)</option>
+            <option value="adult" data-price="2000">3-4 Months (KES 2,000)</option>
+            <option value="old" data-price="2500">4-5 Months (KES 2,500)</option>
+          </select>
+          <label class="form-label mt-2">Quantity</label>
+          <input type="number" class="form-control quantity-input" value="1" min="1" title="Enter quantity" placeholder="Enter quantity" />
+          <button class="btn btn-success w-100 mt-3 add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card product-card h-100">
+        <img src="Assets/Image/Broilerh.png" class="card-img-top product-img" alt="Broiler" />
+        <div class="card-body">
+          <h5 class="card-title">Broiler</h5>
+          <select class="form-select age-select mt-2" title="Select Age">
+            <option disabled selected>Select Age</option>
+            <option value="young" data-price="500">30–45 Days (KES 500)</option>
+          </select>
+          <label class="form-label mt-2">Quantity</label>
+          <input type="number" class="form-control quantity-input" value="1" min="1" title="Enter quantity" placeholder="Enter quantity" />
+          <button class="btn btn-success w-100 mt-3 add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card product-card h-100">
+        <img src="Assets/Image/5.png" class="card-img-top product-img" alt="Layers" />
+        <div class="card-body">
+          <h5 class="card-title">Layers</h5>
+          <select class="form-select age-select mt-2" title="Select Age or Type">
+            <option disabled selected>Select Age</option>
+            <option value="ex" data-price="600">Ex-Layers (KES 600)</option>
+          </select>
+          <label class="form-label mt-2">Quantity</label>
+          <input type="number" class="form-control quantity-input" value="1" min="1" title="Enter quantity" placeholder="Enter quantity" />
+          <button class="btn btn-success w-100 mt-3 add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card product-card h-100">
+        <img src="Assets/Image/eggs.jpg" class="card-img-top product-img" alt="Eggs" />
+        <div class="card-body">
+          <h5 class="card-title">Eggs</h5>
+          <select class="form-select age-select mt-2" title="Select Type">
+            <option disabled selected>Select Type</option>
+            <option value="improved" data-price="20">Improved-Kienyeji (KES 20)</option>
+            <option value="layers" data-price="15">Layers (KES 15)</option>
+          </select>
+          <label class="form-label mt-2">Quantity</label>
+          <input type="number" class="form-control quantity-input" value="1" min="1" />
+          <button class="btn btn-success w-100 mt-3 add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card product-card h-100">
+        <img src="Assets/Image/chick.png" class="card-img-top product-img" alt="Chick" />
+        <div class="card-body">
+          <h5 class="card-title">Chick</h5>
+          <select class="form-select age-select mt-2">
+            <option disabled selected>Select Type</option>
+            <option value="improved" data-price="300">Improved-Kienyeji (KES 300)</option>
+            <option value="layers" data-price="310">Layers (KES 310)</option>
+            <option value="broiler" data-price="200">Broiler (KES 200)</option>
+          </select>
+          <label class="form-label mt-2">Quantity</label>
+          <input type="number" class="form-control quantity-input" value="1" min="1" />
+          <button class="btn btn-success w-100 mt-3 add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="container mt-5">
+  <h3 class="text-center mb-4">Your Cart</h3>
+  <div class="table-responsive">
+    <table class="table table-bordered text-center" id="cart-table">
+      <thead class="table-light">
+        <tr>
+          <th>Image</th>
+          <th>Age/Type</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="cart-body">
+        <!-- Cart items will appear here -->
+      </tbody>
+    </table>
+    <div class="text-end">
+      <h5>Total: <span id="cart-total">KES 0</span></h5>
+    </div>
+  </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
