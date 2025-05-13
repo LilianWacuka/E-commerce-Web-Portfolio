@@ -27,8 +27,6 @@ Good luck and happy coding! 🚀💻
 
 ## DOCUMENTATION
 
- # README.guide
-
 ## Project Overview
 This project is an **E-commerce Poultry Website** designed to showcase and sell poultry products. It features a responsive design, interactive elements, and a clean layout to enhance user experience.
 
