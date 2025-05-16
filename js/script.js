@@ -110,14 +110,15 @@ document.getElementById("site-header").innerHTML = `
     <div class="footer-section bg-dark text-white pt-4 pb-2">
       <div class="container text-center">
         <h3>Contact Us</h3>
-        <p><i class="fas fa-phone me-2"></i> +254 707 603 345</p>
-        <p><i class="fas fa-envelope me-2"></i> lilianpoultry@gmail.com</p>
-        <p><i class="fas fa-map-marker-alt me-2"></i> Wambwe, Mathioya</p>
+        <p><i class="fas fa-phone me-2"></i> <a href="tel:+254707603345">+254 707 603 345</a></p>
+        <p><i class="fas fa-envelope me-2"></i>
+        <a href="mailto:lilianpoultry@gmail.com">lilianpoultryfarm@gmail.com</a></p>
+        <p><i class="fas fa-map-marker-alt me-2"></i><a href="https://goo.gl/maps/4v1x5Z2Q6kE2" target="_blank">Lilian Poultry Farm, Wambwe, Mathioya</a></p>
         <div class="mt-3">
           <a href="https://facebook.com" target="_blank" class="text-white me-3">
             <i class="fab fa-facebook fa-lg"></i>
           </a>
-          <a href="https://instagram.com" target="_blank" class="text-white me-3">
+          <a href="https://instagram.com/lilianpoultryfarm" target="_blank" class="text-white me-3">
             <i class="fab fa-instagram fa-lg"></i>
           </a>
           <a href="https://twitter.com" target="_blank" class="text-white me-3">
