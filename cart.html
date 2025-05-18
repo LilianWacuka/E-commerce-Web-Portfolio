@@ -78,7 +78,8 @@
             <option value="layers" data-price="15">Layers (KES 15)</option>
           </select>
           <label class="form-label mt-2">Quantity</label>
-          <input type="number" class="form-control quantity-input" value="1" min="1" />
+          <input type="number" class="form-control quantity-input" 
+          value="1" min="1" title="Enter quantity" placeholder="Enter quantity" />
           <button class="btn btn-success w-100 mt-3 add-to-cart">Add to Cart</button>
         </div>
       </div>
@@ -88,14 +89,15 @@
         <img src="Assets/Image/chick.png" class="card-img-top product-img" alt="Chick" />
         <div class="card-body">
           <h5 class="card-title">Chick</h5>
-          <select class="form-select age-select mt-2">
+          <select class="form-select age-select mt-2" title="Select Type">
             <option disabled selected>Select Type</option>
             <option value="improved" data-price="300">Improved-Kienyeji (KES 300)</option>
             <option value="layers" data-price="310">Layers (KES 310)</option>
             <option value="broiler" data-price="200">Broiler (KES 200)</option>
           </select>
           <label class="form-label mt-2">Quantity</label>
-          <input type="number" class="form-control quantity-input" value="1" min="1" />
+          <input type="number" class="form-control quantity-input" 
+          value="1" min="1" title="Enter quantity" placeholder="Enter quantity" />
           <button class="btn btn-success w-100 mt-3 add-to-cart">Add to Cart</button>
         </div>
       </div>
@@ -120,6 +122,27 @@
         <!-- Cart items will appear here -->
       </tbody>
     </table>
+    <section class="container mt-5">
+  <h4 class="mb-3">Checkout Details</h4>
+  <form id="checkout-form" class="row g-3">
+    <div class="col-md-6">
+      <label for="customerName" class="form-label">Full Name</label>
+      <input type="text" class="form-control" id="customerName" required>
+    </div>
+    <div class="col-md-6">
+      <label for="phoneNumber" class="form-label">Phone Number</label>
+      <input type="tel" class="form-control" id="phoneNumber" required pattern="^\+254\d{9}$" placeholder="+2547XXXXXXXX">
+    </div>
+    <div class="col-12">
+      <label for="deliveryAddress" class="form-label">Delivery Address</label>
+      <input type="text" class="form-control" id="deliveryAddress" required>
+    </div>
+    <div class="col-12 text-end">
+      <button type="submit" class="btn btn-primary">Proceed to Checkout</button>
+    </div>
+  </form>
+</section>
+
     <div class="text-end">
       <h5>Total: <span id="cart-total">KES 0</span></h5>
     </div>

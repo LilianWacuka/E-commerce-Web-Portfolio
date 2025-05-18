@@ -101,12 +101,46 @@ document.getElementById("site-header").innerHTML = `
       });
     });
   }
+document.getElementById('checkout-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById('customerName').value.trim();
+  const phone = document.getElementById('phoneNumber').value.trim();
+  const address = document.getElementById('deliveryAddress').value.trim();
+
+  if (!name || !phone || !address) {
+    alert('Please fill in all the required fields.');
+    return;
+  }
+
+  // Collect checkout data
+  const orderData = {
+    customerName: name,
+    phoneNumber: phone,
+    deliveryAddress: address,
+    cartItems: cart,
+    totalAmount: cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
+  };
+
+  // Simulate submission (e.g., sending to backend)
+  console.log("Submitting order:", orderData);
+  alert('Order placed successfully! You will receive a confirmation shortly.');
+
+  // Clear cart and form
+  cart = [];
+  localStorage.removeItem('cart');
+  renderCart();
+  this.reset();
+});
+
+
 
   // Initial render of cart on page load
   renderCart();
 });
   // Footer Injection
-  document.getElementById("site-footer").innerHTML = `
+  document.addEventListener("DOMContentLoaded",function (){
+      document.getElementById("site-footer").innerHTML = `
     <div class="footer-section bg-dark text-white pt-4 pb-2">
       <div class="container text-center">
         <h3>Contact Us</h3>
@@ -115,7 +149,7 @@ document.getElementById("site-header").innerHTML = `
         <a href="mailto:lilianpoultry@gmail.com">lilianpoultryfarm@gmail.com</a></p>
         <p><i class="fas fa-map-marker-alt me-2"></i><a href="https://goo.gl/maps/4v1x5Z2Q6kE2" target="_blank">Lilian Poultry Farm, Wambwe, Mathioya</a></p>
         <div class="mt-3">
-          <a href="https://facebook.com" target="_blank" class="text-white me-3">
+          <a href="https://facebook.com/Lilianpoultry" target="_blank" class="text-white me-3">
             <i class="fab fa-facebook fa-lg"></i>
           </a>
           <a href="https://instagram.com/lilianpoultryfarm" target="_blank" class="text-white me-3">
@@ -133,3 +167,38 @@ document.getElementById("site-header").innerHTML = `
       </div>
     </div>
   `;
+  })
+  // Inject Bootstrap-styled Back to Top button
+const backToTopBtn = document.createElement('button');
+backToTopBtn.id = 'backToTopBtn';
+backToTopBtn.onmouseenter = () => backToTopBtn.style.opacity = '0.85';
+backToTopBtn.onmouseleave = () => backToTopBtn.style.opacity = '1';
+
+backToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>'; 
+backToTopBtn.className = 'btn btn-primary rounded-circle shadow position-fixed'; 
+backToTopBtn.style.bottom = '40px';
+backToTopBtn.style.backgroundColor = '#fd7e14';
+backToTopBtn.style.fontSize = '2.20rem';
+backToTopBtn.style.right = '30px';
+backToTopBtn.style.zIndex = '999';
+backToTopBtn.style.display = 'none';
+document.body.appendChild(backToTopBtn);
+// Show/hide button on scroll
+window.addEventListener('scroll', () => {
+  const btn = document.getElementById('backToTopBtn');
+  if (window.scrollY > 100) {
+    btn.style.display = 'block';
+  } else {
+    btn.style.display = 'none';
+  }
+});
+
+// Smooth scroll to top
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('backToTopBtn');
+  if (btn) {
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
